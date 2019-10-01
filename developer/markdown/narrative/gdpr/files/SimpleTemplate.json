@@ -1,0 +1,39 @@
+{
+    "companyContexts": [
+        {
+            "namespace": "imsOrgID",
+            "value": "{Company IMS org ID here}"
+        }
+    ],
+    "users": [
+        {
+            "key": "{Unique user identifier/name/etc for tracking against the job}",
+            "action": [{Either "access" or "delete" or both}],
+            "userIDs": [
+                {
+                    "namespace": "email",
+                    "value": "{user email ID here}",
+                    "type": "standard"
+                },
+                {
+                    "namespace": "ECID",
+                    "type":"standard",
+                    "value":"{Experience Cloud ID for the same user as above}"
+                }
+                //Additional IDs may be added here - see documentation for other namespaces+types that are possible
+            ]
+        },
+        {
+            "key": "{Second unique user for the request}",
+            "action": ["access","delete"],
+            "userIDs": [
+                {
+                    "namespace": "email",
+                    "value": "{user email ID here}",
+                    "type": "standard"
+                }
+            ]
+        }
+    ],
+    "include":[{Product IDs that should be included in the process - REMOVE if unsure, or if all products should be included}],
+}
